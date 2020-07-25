@@ -4,6 +4,9 @@ import guru.springframework.sfgpetclinic.model.BaseEntity;
 
 import java.util.*;
 
+/**
+ * Created by jt on 7/21/18.
+ */
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
     protected Map<Long, T> map = new HashMap<>();
@@ -18,13 +21,13 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
 
     T save(T object){
 
-        if (object != null){
-            if (object.getId() == null){
+        if(object != null) {
+            if(object.getId() == null){
                 object.setId(getNextId());
             }
 
             map.put(object.getId(), object);
-        }else{
+        } else {
             throw new RuntimeException("Object cannot be null");
         }
 
@@ -43,12 +46,12 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
 
         Long nextId = null;
 
-        try{
+        try {
             nextId = Collections.max(map.keySet()) + 1;
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             nextId = 1L;
         }
+
         return nextId;
     }
-
 }
