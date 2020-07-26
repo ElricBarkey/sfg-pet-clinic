@@ -7,9 +7,6 @@ import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by jt on 7/25/18.
- */
 @Component
 public class DataLoader implements CommandLineRunner {
 
