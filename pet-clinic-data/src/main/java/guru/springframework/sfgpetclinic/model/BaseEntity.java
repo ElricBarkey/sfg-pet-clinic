@@ -6,7 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
-@MappedSuperclass//inheriting from this class
+
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
     @Id
